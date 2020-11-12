@@ -8,11 +8,16 @@ namespace PublisherScheduler.Models
 {
     public partial class SchedulerContext : DbContext
     {
-        public SchedulerContext(IConfiguration configuration)
+        public SchedulerContext()
         {
         }
 
-        public IConfiguration Configuration { get; }
+        //public SchedulerContext(IConfiguration configuration)
+        //{
+        //    Configuration = configuration;
+        //}
+
+        //public IConfiguration Configuration { get; }
 
         public SchedulerContext(DbContextOptions<SchedulerContext> options)
             : base(options)
@@ -44,9 +49,8 @@ namespace PublisherScheduler.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(
-                    Configuration.GetConnectionString("SchedulerConnection"));
+                optionsBuilder.UseSqlServer("Server=publisherscheduler1.database.windows.net;Database=Scheduler;User ID=indonesianphiladelphiapausa;Password=2033Ellsworth.;");
+                //optionsBuilder.UseSqlServer(Configuration.GetConnectionString("SchedulerConnection"));
             }
         }
 

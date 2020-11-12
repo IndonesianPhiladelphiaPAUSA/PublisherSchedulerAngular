@@ -11,6 +11,7 @@ using PublisherScheduler.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PublisherScheduler.Helpers;
 
 namespace PublisherScheduler
 {
@@ -29,6 +30,14 @@ namespace PublisherScheduler
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            // Additional Services
+            services.AddDbContext<SchedulerContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("SchedulerConnection")));
+
+            services.AddSingleton<ICommon, Common>(); // Common Helper
+            //
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -94,6 +103,8 @@ namespace PublisherScheduler
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+            app.UseCors(options => options.AllowAnyOrigin());
         }
     }
 }
