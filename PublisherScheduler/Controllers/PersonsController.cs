@@ -115,6 +115,13 @@ namespace PublisherScheduler.Controllers
             return await _common.SaveFileAsync(formFile);
         }
 
+        [HttpGet]
+        [Route("GetAllCapacityNames")]
+        public async Task<ActionResult<IEnumerable<string>>> GetAllCapacityNames()
+        {
+            return await _context.Capacities.Select(c => c.Name).ToListAsync();
+        }
+
         private bool PersonsExists(int id)
         {
             return _context.Persons.Any(e => e.Id == id);

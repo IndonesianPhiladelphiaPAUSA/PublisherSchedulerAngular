@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -12,6 +12,13 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
+import { PersonsComponent } from './persons/persons.component';
+import { CapacitiesComponent } from './capacities/capacities.component';
+import { ShowPersonComponent } from './persons/show-person/show-person.component';
+import { AddEditPersonComponent } from './persons/add-edit-person/add-edit-person.component';
+import { ShowCapacityComponent } from './capacities/show-capacity/show-capacity.component';
+import { AddEditCapacityComponent } from './capacities/add-edit-capacity/add-edit-capacity.component';
+import { SharedService } from './shared.service';
 
 @NgModule({
   declarations: [
@@ -19,12 +26,19 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    PersonsComponent,
+    ShowPersonComponent,
+    AddEditPersonComponent,
+    CapacitiesComponent,
+    ShowCapacityComponent,
+    AddEditCapacityComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -33,7 +47,8 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
     ])
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
+    { provide: SharedService }
   ],
   bootstrap: [AppComponent]
 })
