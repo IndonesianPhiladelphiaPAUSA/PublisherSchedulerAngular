@@ -12,13 +12,6 @@ namespace PublisherScheduler.Models
         {
         }
 
-        //public SchedulerContext(IConfiguration configuration)
-        //{
-        //    Configuration = configuration;
-        //}
-
-        //public IConfiguration Configuration { get; }
-
         public SchedulerContext(DbContextOptions<SchedulerContext> options)
             : base(options)
         {
@@ -49,8 +42,8 @@ namespace PublisherScheduler.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=publisherscheduler1.database.windows.net;Database=Scheduler;User ID=indonesianphiladelphiapausa;Password=2033Ellsworth.;");
-                //optionsBuilder.UseSqlServer(Configuration.GetConnectionString("SchedulerConnection"));
+                optionsBuilder.UseSqlServer("Server=publisherscheduler1.database.windows.net;Database=Scheduler;User ID=indonesianphiladelphiapausa;Password=;");
+                //optionsBuilder.UseSqlServer("name=ConnectionString:SchedulerConnection");
             }
         }
 

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PublisherScheduler.Helpers;
+using Microsoft.Extensions.Hosting.Internal;
 
 namespace PublisherScheduler
 {
@@ -33,8 +34,7 @@ namespace PublisherScheduler
 
             // Additional Services
             services.AddDbContext<SchedulerContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("SchedulerConnection")));
+                options.UseSqlServer(Configuration["ConnectionString:SchedulerConnection"]));
 
             services.AddSingleton<ICommon, Common>(); // Common Helper
             //
