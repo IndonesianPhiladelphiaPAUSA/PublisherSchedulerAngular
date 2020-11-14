@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherScheduler", "PublisherScheduler\PublisherScheduler.csproj", "{70209785-50D1-4346-A8E7-689FD15A58DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublisherScheduler", "PublisherScheduler\PublisherScheduler.csproj", "{70209785-50D1-4346-A8E7-689FD15A58DB}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PublisherSchedulerSql", "PublisherSchedulerSql\PublisherSchedulerSql.sqlproj", "{71B5AB48-965B-46F6-B67B-D34D46B044B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{70209785-50D1-4346-A8E7-689FD15A58DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70209785-50D1-4346-A8E7-689FD15A58DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70209785-50D1-4346-A8E7-689FD15A58DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B5AB48-965B-46F6-B67B-D34D46B044B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B5AB48-965B-46F6-B67B-D34D46B044B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B5AB48-965B-46F6-B67B-D34D46B044B7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{71B5AB48-965B-46F6-B67B-D34D46B044B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B5AB48-965B-46F6-B67B-D34D46B044B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B5AB48-965B-46F6-B67B-D34D46B044B7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
