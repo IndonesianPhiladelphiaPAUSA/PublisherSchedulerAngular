@@ -3,6 +3,7 @@ using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
+using PublisherScheduler.Helpers;
 
 namespace PublisherScheduler.Models
 {
@@ -12,8 +13,7 @@ namespace PublisherScheduler.Models
         {
         }
 
-        public SchedulerContext(DbContextOptions<SchedulerContext> options)
-            : base(options)
+        public SchedulerContext(DbContextOptions<SchedulerContext> options) : base(options)
         {
         }
 
@@ -42,8 +42,8 @@ namespace PublisherScheduler.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=publisherscheduler1.database.windows.net;Database=Scheduler;User ID=indonesianphiladelphiapausa;Password=;");
-                //optionsBuilder.UseSqlServer("name=ConnectionString:SchedulerConnection");
+                IConfiguration builder = Configuration.GetConfiguration();
+                optionsBuilder.UseSqlServer(builder.GetConnectionString("name=ConnectionStrings:SchedulerConnection"));
             }
         }
 
