@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PublisherScheduler.Helpers
 {
-    public static class Configuration
+    public static class CustomConfiguration
     {
         public static IConfiguration GetConfiguration()
         {

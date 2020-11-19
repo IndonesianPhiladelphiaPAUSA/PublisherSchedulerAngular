@@ -34,8 +34,9 @@ namespace PublisherScheduler
 
             // Additional Services
             services.AddDbContext<SchedulerContext>(options =>
-                options.UseSqlServer(Configuration["ConnectionStrings:SchedulerConnection"]));
-
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("SchedulerConnection")));
+            
             services.AddSingleton<ICommon, Common>(); // Common Helper
             //
 

@@ -42,7 +42,7 @@ namespace PublisherScheduler.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                IConfiguration builder = Configuration.GetConfiguration();
+                IConfiguration builder = CustomConfiguration.GetConfiguration();
                 optionsBuilder.UseSqlServer(builder.GetConnectionString("name=ConnectionStrings:SchedulerConnection"));
             }
         }

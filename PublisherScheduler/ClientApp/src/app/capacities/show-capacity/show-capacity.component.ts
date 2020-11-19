@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-show-capacity',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowCapacityComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:SharedService) { }
+
+  CapacitiesList:any[];
 
   ngOnInit() {
+    this.refreshCapacitiesList();
+  }
+
+  refreshCapacitiesList(){
+    this.service.getCapacityList().subscribe(data => {
+      this.CapacitiesList=data;
+    })
   }
 
 }

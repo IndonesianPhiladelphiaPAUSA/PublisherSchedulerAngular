@@ -1,6 +1,28 @@
 <body>
   <app-nav-menu></app-nav-menu>
   <div class="container">
+
+    <h3 class="d-flex justify-content-center">Publisher Scheduler</h3>
+    <h5 class="d-flex justify-content-center">Management Portal</h5>
+
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button routerLink="capacities" class="m-1 btn btn-light btn-outline-primary" Button>
+            Capacities
+          </button>
+        </li>
+        <li class="nav-item">
+          <button routerLink="persons" class="m-1 btn btn-light btn-outline-primary" Button>
+            Persons
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+
     <router-outlet></router-outlet>
   </div>
 </body>

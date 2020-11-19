@@ -44,6 +44,8 @@ import { SharedService } from './shared.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
+      { path: 'persons', component: PersonsComponent},
+      { path: 'capacities', component: CapacitiesComponent},
     ])
   ],
   providers: [
