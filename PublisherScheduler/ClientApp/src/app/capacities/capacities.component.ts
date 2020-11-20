@@ -9,7 +9,7 @@ export class CapacitiesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

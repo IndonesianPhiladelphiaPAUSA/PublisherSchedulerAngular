@@ -50,7 +50,7 @@ import { SharedService } from './shared.service';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
-    { provide: SharedService }
+    SharedService
   ],
   bootstrap: [AppComponent]
 })
