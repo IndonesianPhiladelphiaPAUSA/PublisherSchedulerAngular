@@ -1,1 +1,15 @@
-<p>add-edit-person works!</p>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Person's Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Name"
+        placeholder="Enter Person's Name">
+    </div>
+</div>
+
+<button (click)="addPerson()" *ngIf="person.Id==0" class="btn btn-primary">
+    Add
+</button>
+
+<button (click)="updatePerson()" *ngIf="person.Id!=0" class="btn btn-primary">
+    Update
+</button>
